@@ -4,7 +4,7 @@ public class Pokedex {
     public static ArrayList<Pokemon> pokedex = new ArrayList<>();
 
     protected static void visualize() { // creating the function to visualize pokemons
-        System.out.println(" \nPokemons:");
+        System.out.println("Pokémons:");
         int pokemonID = 1;
         for (Pokemon pokemon: pokedex) {
             System.out.println("[" + pokemonID + "] "+ pokemon.name);

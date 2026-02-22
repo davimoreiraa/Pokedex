@@ -22,17 +22,18 @@ public class Main {
 
             switch (option) {
                 case 1:
+                    System.out.println("");
                     Pokedex.visualize();
-                     detail();
+                    detail();
                     break;
                 case 2:
-                    System.out.println("\n Pokemon's name:");
+                    System.out.println("\nPokemon's name:");
                     String PokemonName = terminal.nextLine(); //collect the name
 
-                    System.out.println("\n Pokemon's type:");
+                    System.out.println("\nPokemon's type:");
                     String PokemonType = terminal.nextLine(); //collect the type
 
-                    System.out.println("\n Pokemon's level:");
+                    System.out.println("\nPokemon's level:");
                     int PokemonLevel = terminal.nextInt(); //collect the level
 
                     Pokedex.addPokemon(PokemonName, PokemonType, PokemonLevel);
@@ -49,18 +50,19 @@ public class Main {
     private static void detail() { //enter the screen to visualize pokemons details
         Scanner terminal = new Scanner(System.in);
         int option = 0;
-        System.out.println(" \nSelect an option:");
-        System.out.println("1 - Visualize Pokémon details");
-        System.out.println("2 - Return to Menu");
-        option = terminal.nextInt();
-
+        
         while (option != 2) {
+            System.out.println(" \nSelect an option:");
+            System.out.println("1 - Visualize Pokémon details");
+            System.out.println("2 - Return to Menu");
+            option = terminal.nextInt();
             switch(option) {
                 case 1:
                     System.out.println("\nWich Pokémon do you want to see details of?");
                     Pokedex.visualize();
                     int indexSelected = terminal.nextInt();
                     Pokedex.detailPokemon(indexSelected - 1);
+                    break;
                 case 2:
                     break;
                 default:
