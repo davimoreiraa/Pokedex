@@ -5,8 +5,10 @@ public class Pokedex {
 
     protected static void visualize() { // creating the function to visualize pokemons
         System.out.println(" \nPokemons:");
+        int pokemonID = 1;
         for (Pokemon pokemon: pokedex) {
-            System.out.println("-> " + pokemon.name);
+            System.out.println("[" + pokemonID + "] "+ pokemon.name);
+            pokemonID++;
         }
     }
 
@@ -14,4 +16,5 @@ public class Pokedex {
         Pokemon pokemon = new Pokemon(name, element, level);
         pokedex.add(pokemon);
     }
+
 }
