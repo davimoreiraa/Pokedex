@@ -17,4 +17,11 @@ public class Pokedex {
         pokedex.add(pokemon);
     }
 
+    protected static void detailPokemon(int indexSelected) {
+        Pokemon pokemonSelected = pokedex.get(indexSelected);
+        System.out.println("Name: " + pokemonSelected.name);
+        System.out.println("Element: " + pokemonSelected.element);
+        System.out.println("Level: " + pokemonSelected.level);
+    }
+
 }

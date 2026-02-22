@@ -54,23 +54,18 @@ public class Main {
         System.out.println("2 - Return to Menu");
         option = terminal.nextInt();
 
-        switch(option) {
-            case 1:
-                System.out.println("Wich Pokémon do you want to see details of?");
-                Pokedex.visualize();
-            case 2:
-                break;
+        while (option != 2) {
+            switch(option) {
+                case 1:
+                    System.out.println("\nWich Pokémon do you want to see details of?");
+                    Pokedex.visualize();
+                    int indexSelected = terminal.nextInt();
+                    Pokedex.detailPokemon(indexSelected - 1);
+                case 2:
+                    break;
+                default:
+                    System.out.println("Select a valid option");
+            }
         }
     }
-
-    // private static void visualize(ArrayList<String> pokedex) { // creating the function to visualize pokemons
-    //     System.out.println(" \nPokemons:");
-    //     for (String pokemon: pokedex) {
-    //         System.out.println("-> " + pokemon);
-    //     }
-    // }
-
-    // private static void addPokemon(String pokemonName) {
-    //     pokedex.addPokemon(pokemonName);
-    // }
 }
