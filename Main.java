@@ -5,8 +5,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner terminal = new Scanner(System.in);
         // ArrayList<String> pokedex = new ArrayList<>(); 
-        Pokedex.addPokemon("Charizard");
-        Pokedex.addPokemon("Lucario");
+        Pokedex.addPokemon("Charizard", "Fire", 100);
+        Pokedex.addPokemon("Lucario", "Fight and Steel", 100);
         int option = 0;
 
         while (option != 3) {
@@ -25,12 +25,17 @@ public class Main {
                     Pokedex.visualize();
                     break;
                 case 2:
-                    System.out.println("Pokemon's name:");
-                    String name = terminal.nextLine(); //collect the name
-                    Pokedex.addPokemon(name);
+                    System.out.println("\n Pokemon's name:");
+                    String PokemonName = terminal.nextLine(); //collect the name
+                    System.out.println("\n Pokemon's type:");
+                    String PokemonType = terminal.nextLine(); //collect the type
+                    System.out.println("\n Pokemon's level:");
+                    int PokemonLevel = terminal.nextInt(); //collect the level
+
+                    Pokedex.addPokemon(PokemonName, PokemonType, PokemonLevel);
                     break;
                 case 3:
-                    System.out.println("Closing program...");
+                    System.out.println("\n Closing program...");
                     break;
             }
         }
