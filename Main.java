@@ -22,10 +22,7 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    System.out.println(" \nPokemons:");
-                    for (String pokemon: pokedex) {
-                        System.out.println("-> "+ pokemon);
-                    }
+                    visualize(pokedex);
                     break;
                 case 2:
                     System.out.println("Pokemon's name:");
@@ -36,6 +33,13 @@ public class Main {
                     System.out.println("Closing program...");
                     break;
             }
+        }
+    }
+
+    private static void visualize(ArrayList<String> pokedex) {
+        System.out.println(" \nPokemons:");
+        for (String pokemon: pokedex) {
+            System.out.println("-> " + pokemon);
         }
     }
 }
