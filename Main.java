@@ -11,14 +11,13 @@ public class Main {
 
         while (option != 3) {
             System.out.println("\nChoose an option:");
-            System.out.println("1 - Visualize Pokemons in the Pokedex");
-            System.out.println("2 - Insert a Pokemon in the Pokedex");
+            System.out.println("[1] Visualize Pokemons in the Pokedex");
+            System.out.println("[2] Insert a Pokemon in the Pokedex");
             // System.out.println("3 - Delete Pokemon");
-            // System.out.println("3 - Edit Pokemon");
-            System.out.println("3 - Quite");
+            System.out.println("[3] Quite");
             
             option = terminal.nextInt(); // collect the digit 
-            terminal.nextLine(); // clear terminal
+            terminal.nextLine(); //cleans buffer
 
             switch (option) {
                 case 1:
@@ -34,9 +33,10 @@ public class Main {
                     String PokemonType = terminal.nextLine(); //collect the type
 
                     System.out.println("\nPokemon's level:");
-                    int PokemonLevel = terminal.nextInt(); //collect the level
+                    int PokemonLevel = collectDigit(); //collect the level
 
                     Pokedex.addPokemon(PokemonName, PokemonType, PokemonLevel);
+                    System.out.println("Pokémon added!");
                     break;
                 case 3:
                     System.out.println("\n Closing program...");
@@ -69,5 +69,20 @@ public class Main {
                     System.out.println("Select a valid option");
             }
         }
+    }
+
+    private static int collectDigit() {
+        Scanner terminal = new Scanner(System.in);
+        int digit = 0;
+        boolean validInput = false;
+        while(validInput == false) {
+            try {
+                digit = terminal.nextInt();
+                validInput = true;
+            } catch (Exception InputMismatchException) {
+                System.out.println("Type a valid option.");
+            }
+        }
+        return digit;
     }
 }
