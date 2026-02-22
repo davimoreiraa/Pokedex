@@ -1,12 +1,12 @@
-import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class Main {
     public static void main(String[] args) {
         Scanner terminal = new Scanner(System.in);
-        ArrayList<String> pokedex = new ArrayList<>(); 
-        pokedex.add("Charizard");
-        pokedex.add("Lucario");
+        // ArrayList<String> pokedex = new ArrayList<>(); 
+        Pokedex.addPokemon("Charizard");
+        Pokedex.addPokemon("Lucario");
         int option = 0;
 
         while (option != 3) {
@@ -22,12 +22,12 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    visualize(pokedex);
+                    Pokedex.visualize();
                     break;
                 case 2:
                     System.out.println("Pokemon's name:");
                     String name = terminal.nextLine(); //collect the name
-                    pokedex.add(name);
+                    Pokedex.addPokemon(name);
                     break;
                 case 3:
                     System.out.println("Closing program...");
@@ -36,10 +36,14 @@ public class Main {
         }
     }
 
-    private static void visualize(ArrayList<String> pokedex) {
-        System.out.println(" \nPokemons:");
-        for (String pokemon: pokedex) {
-            System.out.println("-> " + pokemon);
-        }
-    }
+    // private static void visualize(ArrayList<String> pokedex) { // creating the function to visualize pokemons
+    //     System.out.println(" \nPokemons:");
+    //     for (String pokemon: pokedex) {
+    //         System.out.println("-> " + pokemon);
+    //     }
+    // }
+
+    // private static void addPokemon(String pokemonName) {
+    //     pokedex.addPokemon(pokemonName);
+    // }
 }
