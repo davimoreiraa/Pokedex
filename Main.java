@@ -32,7 +32,6 @@ public class Main {
                     System.out.println("\nPokemon's type:");
                     String PokemonType = terminal.nextLine(); //collect the type
 
-                    System.out.println("\nPokemon's level:");
                     int PokemonLevel = collectDigit(); //collect the level
 
                     Pokedex.addPokemon(PokemonName, PokemonType, PokemonLevel);
@@ -77,10 +76,12 @@ public class Main {
         boolean validInput = false;
         while(validInput == false) {
             try {
+                System.out.println("\nPokemon's level:");
                 digit = terminal.nextInt();
                 validInput = true;
             } catch (Exception InputMismatchException) {
                 System.out.println("Type a valid option.");
+                terminal.nextLine();
             }
         }
         return digit;
