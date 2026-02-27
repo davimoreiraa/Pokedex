@@ -26,7 +26,7 @@ public class Main {
                     detail();
                     break;
                 case 2:
-                    String PokemonName = colletString(); //collect the name
+                    String PokemonName = colletString("\nPokemon's name:", "Pokémon name can't be empty or have a number."); //collect the name
 
                     System.out.println("\nPokemon's type:");
                     String PokemonType = terminal.nextLine(); //collect the type
@@ -69,17 +69,17 @@ public class Main {
         }
     }
 
-    private static String colletString() {
+    private static String colletString(String question, String errorMsg) {
         Scanner terminal = new Scanner(System.in);
         boolean validInput = false;
         String pokemonName = "";
         while(!validInput) {
-            System.out.println("\nPokemon's name:");
+            System.out.println(question);
             pokemonName = terminal.nextLine();
             if (pokemonName.matches("[a-zA-Z ]+") && !pokemonName.isBlank()) {
                 validInput = true;
             } else {
-                System.out.println("Pokémon name can't be empty or have a number.");
+                System.out.println(errorMsg);
             }
         }
         return pokemonName;
