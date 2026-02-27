@@ -28,8 +28,7 @@ public class Main {
                 case 2:
                     String PokemonName = colletString("\nPokemon's name:", "Pokémon name can't be empty or have a number."); //collect the name
 
-                    System.out.println("\nPokemon's type:");
-                    String PokemonType = terminal.nextLine(); //collect the type
+                    String PokemonType = colletString("\nPokemon's type:", "Pokémon type can't be empty or have a number.") ; //collect the type
 
                     int PokemonLevel = collectDigit(); //collect the level
 
