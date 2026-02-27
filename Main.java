@@ -26,8 +26,7 @@ public class Main {
                     detail();
                     break;
                 case 2:
-                    System.out.println("\nPokemon's name:");
-                    String PokemonName = terminal.nextLine(); //collect the name
+                    String PokemonName = colletString(); //collect the name
 
                     System.out.println("\nPokemon's type:");
                     String PokemonType = terminal.nextLine(); //collect the type
@@ -70,6 +69,22 @@ public class Main {
         }
     }
 
+    private static String colletString() {
+        Scanner terminal = new Scanner(System.in);
+        boolean validInput = false;
+        String pokemonName = "";
+        while(!validInput) {
+            System.out.println("\nPokemon's name:");
+            pokemonName = terminal.nextLine();
+            if (pokemonName.matches("[a-zA-Z ]+") && !pokemonName.isBlank()) {
+                validInput = true;
+            } else {
+                System.out.println("Pokémon name can't be empty or have a number.");
+            }
+        }
+        return pokemonName;
+    }
+
     private static int collectDigit() {
         Scanner terminal = new Scanner(System.in);
         int digit = 0;
@@ -87,3 +102,4 @@ public class Main {
         return digit;
     }
 }
+
